@@ -9,8 +9,8 @@
 
 #example 1
 count=10
-if [ $count -eq 9 ]
+if [ $count -gt 9 ]
 then 
     echo "condition is true"
 fi
-
+ 
