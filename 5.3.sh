@@ -6,23 +6,21 @@ echo "$weight_var kgs"
 read -p "Enter the height in cms: " height_var
 echo "$height_var cms"
 
-bmi=($weight_var/$height_var**2)*10000
+bmi= "(weight_var/(height_var* height_var)*10000) | bc
 
-if (($bmi < 18.5))
+if [ "$bmi" -lt 18.5 ]
 then
     echo "The bmi is $bmi you are under weight"
-elif (($bmi > 18.5)) && (($bmi < 25))
+elif [ "$bmi" -gt 18.5 -a "$bmi" -lt 25 ]
 then 
     echo "The bmi is $bmi your bmi is normal"
-elif  (($bmi > 25)) && (($bmi < 29.9)) 
+elif  [ "$bmi" -gt 25 -a "$bmi" -lt 29.9 ] 
 then 
     echo "The bmi is $bmi you are overweight"
-elif  (($bmi >= 30))    
+elif  [ "$bmi" -ge 30 ]    
 then 
     echo "Obesity"
 else 
     echo "check the input and try again"
 fi
-echo
-echo
-echo "------Thank your for checking your bmi-----"   
+  
